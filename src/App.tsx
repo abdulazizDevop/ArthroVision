@@ -1,12 +1,9 @@
 import React, { useState, useRef } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Activity, FileText, User, Image as ImageIcon, ChevronRight, ChevronLeft, Download, Printer, AlertTriangle } from "lucide-react";
+import { Image as Download, Printer } from "lucide-react";
 import { Button } from "./components/ui/Button";
 import { Input } from "./components/ui/Input";
 import { Label } from "./components/ui/Label";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "./components/ui/Card";
 import { Slider } from "./components/ui/Slider";
-import { RadioGroup, RadioGroupItem } from "./components/ui/RadioGroup";
 import { JointMap } from "./components/JointMap";
 import { FileUpload } from "./components/FileUpload";
 import { calculateDAS28 } from "./lib/das28";
