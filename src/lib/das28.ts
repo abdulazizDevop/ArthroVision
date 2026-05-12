@@ -4,7 +4,7 @@ export function calculateDAS28(
   vas: number,
   esr?: number,
   crp?: number
-): { score: number; interpretation: string; type: string } | null {
+): { score: number; interpretation: "remission" | "low" | "moderate" | "high"; type: string } | null {
   if (tjc28 === undefined || sjc28 === undefined || vas === undefined) return null;
 
   let score = 0;
@@ -24,11 +24,11 @@ export function calculateDAS28(
   // Round to 2 decimal places
   score = Math.round(score * 100) / 100;
 
-  let interpretation = "";
-  if (score < 2.6) interpretation = "Remissiya";
-  else if (score <= 3.2) interpretation = "Past faollik";
-  else if (score <= 5.1) interpretation = "O'rtacha faollik";
-  else interpretation = "Yuqori faollik";
+  let interpretation: "remission" | "low" | "moderate" | "high";
+  if (score < 2.6) interpretation = "remission";
+  else if (score <= 3.2) interpretation = "low";
+  else if (score <= 5.1) interpretation = "moderate";
+  else interpretation = "high";
 
   return { score, interpretation, type };
 }

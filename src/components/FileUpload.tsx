@@ -1,4 +1,5 @@
 import React, { useState, useRef } from "react";
+import { useTranslation } from "react-i18next";
 import { UploadCloud, X, FileText, Image as ImageIcon } from "lucide-react";
 import { cn } from "@/src/lib/utils";
 
@@ -21,6 +22,7 @@ export function FileUpload({
   caption,
   onCaptionChange,
 }: FileUploadProps) {
+  const { t } = useTranslation();
   const [isDragging, setIsDragging] = useState(false);
   const [isUploading, setIsUploading] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -90,9 +92,9 @@ export function FileUpload({
         >
           <UploadCloud className="h-10 w-10 text-gray-400 mb-2" />
           <p className="text-sm text-gray-600">
-            {isUploading ? "Yuklanmoqda..." : "Faylni tortib tashlang yoki yuklash uchun bosing"}
+            {isUploading ? t("upload.uploading") : t("upload.dragOrClick")}
           </p>
-          <p className="text-xs text-gray-400 mt-1">Qo'llab-quvvatlanadi: {accept}</p>
+          <p className="text-xs text-gray-400 mt-1">{t("upload.supported")} {accept}</p>
           <input
             type="file"
             ref={fileInputRef}
@@ -119,7 +121,7 @@ export function FileUpload({
                   rel="noopener noreferrer"
                   className="text-xs text-blue-600 hover:underline"
                 >
-                  Faylni ko'rish
+                  {t("upload.viewFile")}
                 </a>
               </div>
             </div>
@@ -134,7 +136,7 @@ export function FileUpload({
           {onCaptionChange && (
             <input
               type="text"
-              placeholder="Izoh qo'shish (masalan, 'C-RB natijasi 12.03.2026')"
+              placeholder={t("upload.captionPlaceholder")}
               value={caption || ""}
               onChange={(e) => onCaptionChange(e.target.value)}
               className="w-full text-sm border-b border-gray-300 bg-transparent px-1 py-1 focus:outline-none focus:border-blue-500"

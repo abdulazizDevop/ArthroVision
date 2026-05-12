@@ -1,0 +1,119 @@
+{
+  "app": {
+    "version": "v2.4 AI-CORE",
+    "patient": "Patient",
+    "anonymous": "Anonymous",
+    "disclaimer": "For clinical decision support only"
+  },
+  "patient": {
+    "title": "Patient Data",
+    "name": "Name",
+    "namePlaceholder": "Anonymous user",
+    "age": "Age",
+    "sex": "Sex",
+    "female": "Female",
+    "male": "Male",
+    "bmi": "BMI",
+    "complaints": "Chief complaints and history",
+    "complaintsPlaceholder": "Symmetric morning stiffness..."
+  },
+  "joints": {
+    "title": "Interactive 28-joint map",
+    "tenderShort": "TJC",
+    "swollenShort": "SJC",
+    "tender": "Tender",
+    "swollen": "Swollen",
+    "both": "Both",
+    "unchanged": "Unchanged",
+    "patientVas": "Patient global assessment (VAS)",
+    "morningStiffness": "Morning stiffness (min)",
+    "morningStiffnessPlaceholder": "e.g., 45",
+    "tooltipCycle": "Click: Tender (Red) → Swollen (Blue) → Both (Purple) → None",
+    "names": {
+      "shoulder_l": "Left shoulder",
+      "shoulder_r": "Right shoulder",
+      "elbow_l": "Left elbow",
+      "elbow_r": "Right elbow",
+      "wrist_l": "Left wrist",
+      "wrist_r": "Right wrist",
+      "knee_l": "Left knee",
+      "knee_r": "Right knee",
+      "mcp_l_1": "Left MCP 1",
+      "mcp_l_2": "Left MCP 2",
+      "mcp_l_3": "Left MCP 3",
+      "mcp_l_4": "Left MCP 4",
+      "mcp_l_5": "Left MCP 5",
+      "pip_l_1": "Left PIP 1",
+      "pip_l_2": "Left PIP 2",
+      "pip_l_3": "Left PIP 3",
+      "pip_l_4": "Left PIP 4",
+      "pip_l_5": "Left PIP 5",
+      "mcp_r_1": "Right MCP 1",
+      "mcp_r_2": "Right MCP 2",
+      "mcp_r_3": "Right MCP 3",
+      "mcp_r_4": "Right MCP 4",
+      "mcp_r_5": "Right MCP 5",
+      "pip_r_1": "Right PIP 1",
+      "pip_r_2": "Right PIP 2",
+      "pip_r_3": "Right PIP 3",
+      "pip_r_4": "Right PIP 4",
+      "pip_r_5": "Right PIP 5"
+    }
+  },
+  "labs": {
+    "title": "Upload lab results",
+    "esr": "ESR (mm/h)",
+    "esrUpload": "Upload ESR",
+    "crp": "CRP (mg/L)",
+    "crpUpload": "Upload CRP",
+    "rf": "RF (IU/ml)",
+    "antiCcp": "Anti-CCP",
+    "valuePlaceholder": "Value"
+  },
+  "imaging": {
+    "title": "Imaging (X-ray)",
+    "steinbrocker": "Steinbrocker:",
+    "stage1": "Stage I",
+    "stage2": "Stage II",
+    "stage3": "Stage III",
+    "stage4": "Stage IV",
+    "uploadRentgen": "Upload X-ray"
+  },
+  "das28": {
+    "title": "DAS-28 System",
+    "incomplete": "INCOMPLETE",
+    "remission": "Remission",
+    "low": "Low activity",
+    "moderate": "Moderate activity",
+    "high": "High activity",
+    "highLabel": "High"
+  },
+  "ai": {
+    "title": "AI classification summary",
+    "loading": "ANALYZING...",
+    "generate": "GENERATE SUMMARY",
+    "noResult": "Run AI analysis to generate a summary.",
+    "summaryPrefix": "The system considers the clinical profile consistent with:",
+    "extraArticular": "Extra-articular involvement:",
+    "extraArticularNone": "No extra-articular involvement detected.",
+    "error": "An error occurred generating the AI report. Please try again."
+  },
+  "recommendations": {
+    "title": "Recommendations",
+    "waiting": "Awaiting AI analysis."
+  },
+  "actions": {
+    "print": "Print",
+    "downloadPdf": "Download PDF"
+  },
+  "upload": {
+    "uploading": "Uploading...",
+    "dragOrClick": "Drag a file here or click to upload",
+    "supported": "Supported:",
+    "viewFile": "View file",
+    "captionPlaceholder": "Add a caption (e.g., 'CRP result 12.03.2026')"
+  },
+  "language": {
+    "label": "Language"
+  }
+}

@@ -1,0 +1,119 @@
+{
+  "app": {
+    "version": "v2.4 AI-CORE",
+    "patient": "Bemor",
+    "anonymous": "Anonim",
+    "disclaimer": "Faqat klinik qarorlarni qo'llab-quvvatlash uchun"
+  },
+  "patient": {
+    "title": "Bemor ma'lumotlari",
+    "name": "Ism",
+    "namePlaceholder": "Anonim foydalanuvchi",
+    "age": "Yosh",
+    "sex": "Jins",
+    "female": "Ayol",
+    "male": "Erkak",
+    "bmi": "TMI",
+    "complaints": "Asosiy shikoyat va anamnez",
+    "complaintsPlaceholder": "Simmetrik ertalabki qotib qolish..."
+  },
+  "joints": {
+    "title": "Interaktiv 28-bo'g'im xaritasi",
+    "tenderShort": "OgB",
+    "swollenShort": "ShB",
+    "tender": "Og'riqli",
+    "swollen": "Shishgan",
+    "both": "Ikkalasi",
+    "unchanged": "O'zgarishsiz",
+    "patientVas": "Bemorning umumiy holati (VAS)",
+    "morningStiffness": "Ertalabki qotib qolish (daq)",
+    "morningStiffnessPlaceholder": "masalan, 45",
+    "tooltipCycle": "Bosing: Og'riqli (Qizil) → Shishgan (Ko'k) → Ikkalasi (Binafsha) → Yo'q",
+    "names": {
+      "shoulder_l": "Chap yelka",
+      "shoulder_r": "O'ng yelka",
+      "elbow_l": "Chap tirsak",
+      "elbow_r": "O'ng tirsak",
+      "wrist_l": "Chap bilak",
+      "wrist_r": "O'ng bilak",
+      "knee_l": "Chap tizza",
+      "knee_r": "O'ng tizza",
+      "mcp_l_1": "Chap MCP 1",
+      "mcp_l_2": "Chap MCP 2",
+      "mcp_l_3": "Chap MCP 3",
+      "mcp_l_4": "Chap MCP 4",
+      "mcp_l_5": "Chap MCP 5",
+      "pip_l_1": "Chap PIP 1",
+      "pip_l_2": "Chap PIP 2",
+      "pip_l_3": "Chap PIP 3",
+      "pip_l_4": "Chap PIP 4",
+      "pip_l_5": "Chap PIP 5",
+      "mcp_r_1": "O'ng MCP 1",
+      "mcp_r_2": "O'ng MCP 2",
+      "mcp_r_3": "O'ng MCP 3",
+      "mcp_r_4": "O'ng MCP 4",
+      "mcp_r_5": "O'ng MCP 5",
+      "pip_r_1": "O'ng PIP 1",
+      "pip_r_2": "O'ng PIP 2",
+      "pip_r_3": "O'ng PIP 3",
+      "pip_r_4": "O'ng PIP 4",
+      "pip_r_5": "O'ng PIP 5"
+    }
+  },
+  "labs": {
+    "title": "Laboratoriya natijalarini yuklash",
+    "esr": "EChT (mm/soat)",
+    "esrUpload": "EChT yuklash",
+    "crp": "C-RB (mg/L)",
+    "crpUpload": "C-RB yuklash",
+    "rf": "RF (XB/ml)",
+    "antiCcp": "Anti-CCP",
+    "valuePlaceholder": "Qiymat"
+  },
+  "imaging": {
+    "title": "Tasviriy tekshiruv (Rentgen)",
+    "steinbrocker": "Shteynbroker:",
+    "stage1": "I bosqich",
+    "stage2": "II bosqich",
+    "stage3": "III bosqich",
+    "stage4": "IV bosqich",
+    "uploadRentgen": "Rentgenni yuklash"
+  },
+  "das28": {
+    "title": "DAS-28 Tizimi",
+    "incomplete": "TUGALLANMAGAN",
+    "remission": "Remissiya",
+    "low": "Past faollik",
+    "moderate": "O'rtacha faollik",
+    "high": "Yuqori faollik",
+    "highLabel": "Yuqori"
+  },
+  "ai": {
+    "title": "SI tasnifi xulosalari",
+    "loading": "TAHLIL QILINMOQDA...",
+    "generate": "XULOSA YARATISH",
+    "noResult": "Xulosalar yaratish uchun SI tahlilini ishga tushiring.",
+    "summaryPrefix": "Tizim klinik profilni quyidagiga mos deb hisoblaydi:",
+    "extraArticular": "Bo'g'imdan tashqari zararlanish:",
+    "extraArticularNone": "Bo'g'imdan tashqari zararlanish aniqlanmadi.",
+    "error": "SI hisobotini yaratishda xatolik yuz berdi. Iltimos, qaytadan urinib ko'ring."
+  },
+  "recommendations": {
+    "title": "Tavsiyalar",
+    "waiting": "SI tahlili kutilmoqda."
+  },
+  "actions": {
+    "print": "Chop etish",
+    "downloadPdf": "PDF yuklab olish"
+  },
+  "upload": {
+    "uploading": "Yuklanmoqda...",
+    "dragOrClick": "Faylni tortib tashlang yoki yuklash uchun bosing",
+    "supported": "Qo'llab-quvvatlanadi:",
+    "viewFile": "Faylni ko'rish",
+    "captionPlaceholder": "Izoh qo'shish (masalan, 'C-RB natijasi 12.03.2026')"
+  },
+  "language": {
+    "label": "Til"
+  }
+}

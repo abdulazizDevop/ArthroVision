@@ -1,12 +1,13 @@
+import "dotenv/config";
 import express from "express";
 import { createServer as createViteServer } from "vite";
 import multer from "multer";
 import path from "path";
 import fs from "fs";
 import cors from "cors";
-import { GoogleGenAI } from "@google/genai";
+import OpenAI from "openai";
 
-const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
+const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
 async function startServer() {
   const app = express();
@@ -60,73 +61,80 @@ async function startServer() {
     }
   });
 
+  const LANGUAGE_NAMES: Record<string, string> = {
+    uz: "Uzbek (Latin script)",
+    ru: "Russian",
+    en: "English",
+  };
+
   app.post("/api/analyze", async (req, res) => {
     try {
-      const { patientData, clinicalData, labData, imagingData, das28Score } = req.body;
+      const { language, patientData, clinicalData, labData, imagingData, das28Score } = req.body;
+      const langCode: string = ["uz", "ru", "en"].includes(language) ? language : "uz";
+      const languageName = LANGUAGE_NAMES[langCode];
 
       const prompt = `
         You are an AI clinical decision support system for Rheumatoid Arthritis.
         Analyze the following patient data and provide a structured classification and recommendations.
-        
+
         CRITICAL RULES:
         - DO NOT provide a definitive diagnosis.
         - DO NOT provide drug dosages or prescriptions.
         - Frame everything as "suggestive of" or "consistent with".
-        
+
         Patient Data:
         - Age: ${patientData.age}
         - Sex: ${patientData.sex}
         - BMI: ${patientData.bmi}
         - Complaints: ${patientData.complaints}
         - History: ${patientData.history}
-        
+
         Clinical Data:
         - Morning Stiffness: ${clinicalData.morningStiffness} mins
         - TJC28: ${clinicalData.tjc28}
         - SJC28: ${clinicalData.sjc28}
         - Patient Global Assessment (VAS): ${clinicalData.vas}
-        
+
         Lab Data:
         - ESR: ${labData.esr.value}
         - CRP: ${labData.crp.value}
         - RF: ${labData.rf.value}
         - Anti-CCP: ${labData.antiCcp.value}
-        
+
         Imaging Data:
         - Steinbrocker Stage: ${imagingData.steinbrockerStage}
-        
-        Calculated DAS28: ${das28Score.score} (${das28Score.interpretation})
-        
-        Provide the output as a JSON object with the following structure. PLEASE PROVIDE ALL VALUES IN UZBEK LANGUAGE:
+
+        Calculated DAS28: ${das28Score?.score ?? "N/A"} (${das28Score?.interpretation ?? "N/A"})
+
+        IMPORTANT: Write ALL values in the output in ${languageName}. JSON keys must stay in English.
+        Respond with valid JSON only, using this exact structure:
         {
           "classification": {
-            "diagnosisPattern": "e.g., Seropozitiv RA ga mos keladi",
-            "diseaseStage": "e.g., Erta / Rivojlangan",
-            "diseaseActivity": "e.g., DAS28 ga ko'ra yuqori faollik",
-            "extraArticular": "Ma'lumotlarga ko'ra mavjud / Yo'q / Noma'lum",
-            "structuralDamage": "Shteynbroker bosqichi...",
-            "immunology": "ACPA musbat/manfiy",
-            "functionalClass": "I-IV sinf bahosi",
-            "complications": "Kuzatilishi kerak bo'lgan ehtimoliy asoratlar"
+            "diagnosisPattern": "...",
+            "diseaseStage": "...",
+            "diseaseActivity": "...",
+            "extraArticular": "...",
+            "structuralDamage": "...",
+            "immunology": "...",
+            "functionalClass": "...",
+            "complications": "..."
           },
           "recommendations": {
-            "treatmentCategories": ["Kategoriya 1", "Kategoriya 2"],
-            "diagnosticTests": ["Test 1", "Test 2"],
-            "monitoringStrategy": "Monitoring tavsifi",
-            "lifestyle": ["Tavsiya 1", "Tavsiya 2"]
+            "treatmentCategories": ["..."],
+            "diagnosticTests": ["..."],
+            "monitoringStrategy": "...",
+            "lifestyle": ["..."]
           }
         }
       `;
 
-      const response = await ai.models.generateContent({
-        model: "gemini-2.5-flash",
-        contents: prompt,
-        config: {
-          responseMimeType: "application/json",
-        }
+      const response = await openai.chat.completions.create({
+        model: "gpt-4o-mini",
+        messages: [{ role: "user", content: prompt }],
+        response_format: { type: "json_object" },
       });
 
-      const resultText = response.text;
+      const resultText = response.choices[0]?.message?.content;
       if (!resultText) {
         throw new Error("No response from AI");
       }
