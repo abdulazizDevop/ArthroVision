@@ -128,19 +128,19 @@ export default function App() {
   return (
     <div className="min-h-screen flex flex-col" ref={reportRef}>
       {/* Header */}
-      <header className="h-[60px] px-6 flex items-center justify-between border-b border-(--border)] bg-white shrink-0">
-        <div className="font-extrabold text-[20px] text-(--accent-plum)] flex items-center gap-2">
+      <header className="h-[60px] px-6 flex items-center justify-between border-b border-(--border) bg-white shrink-0">
+        <div className="font-extrabold text-[20px] text-(--accent-plum) flex items-center gap-2">
           ARTHROVISION
           <span className="font-light opacity-50">|</span>
-          <span className="text-[12px] text-(--text-muted)]">{t("app.version")}</span>
+          <span className="text-[12px] text-(--text-muted)">{t("app.version")}</span>
         </div>
         <div className="flex items-center gap-3">
-          <div className="bg-blue-50 px-3 py-1 rounded-full text-[13px] font-semibold text-(--accent-blue)] hidden sm:block">
+          <div className="bg-blue-50 px-3 py-1 rounded-full text-[13px] font-semibold text-(--accent-blue) hidden sm:block">
             {t("app.patient")}: {patient.name || t("app.anonymous")}
           </div>
           <LanguageSwitcher />
         </div>
-        <div className="text-(--high)] text-[11px] font-bold uppercase tracking-wider hidden md:block">
+        <div className="text-(--high) text-[11px] font-bold uppercase tracking-wider hidden md:block">
           {t("app.disclaimer")}
         </div>
       </header>
@@ -274,11 +274,11 @@ export default function App() {
           <div className="bento-card-title">{t("das28.title")}</div>
           <div className="flex flex-col items-center justify-center flex-1">
             <div className="bento-das-score">{das28?.score || "0.00"}</div>
-            <div className="text-[14px] font-bold text-(--moderate)] uppercase">{das28Interpretation}</div>
+            <div className="text-[14px] font-bold text-(--moderate) uppercase">{das28Interpretation}</div>
             <div className="bento-status-bar w-full max-w-[200px]">
               <div className="bento-status-fill" style={{ width: `${Math.min(100, (((das28?.score) || 0) / 10) * 100)}%` }}></div>
             </div>
-            <div className="flex justify-between w-full max-w-[200px] text-[10px] text-(--text-muted)]">
+            <div className="flex justify-between w-full max-w-[200px] text-[10px] text-(--text-muted)">
               <span>{t("das28.remission")}</span>
               <span>{t("das28.highLabel")}</span>
             </div>
@@ -289,7 +289,7 @@ export default function App() {
         <div className="bento-card bento-ai">
           <div className="bento-card-title">
             {t("ai.title")}
-            <Button size="sm" className="h-6 text-[10px] px-2 bg-(--accent-plum)] hover:bg-purple-800 text-white" onClick={handleAnalyze} disabled={isAnalyzing}>
+            <Button size="sm" className="h-6 text-[10px] px-2 bg-(--accent-plum) hover:bg-purple-800 text-white" onClick={handleAnalyze} disabled={isAnalyzing}>
               {isAnalyzing ? t("ai.loading") : t("ai.generate")}
             </Button>
           </div>
@@ -301,7 +301,7 @@ export default function App() {
                 <span className="bento-tag">{aiResult.classification.diseaseActivity}</span>
                 <span className="bento-tag">{aiResult.classification.structuralDamage}</span>
               </div>
-              <div className="mt-3 text-[12px] text-(--text-muted)] leading-relaxed">
+              <div className="mt-3 text-[12px] text-(--text-muted) leading-relaxed">
                 {t("ai.summaryPrefix")} {aiResult.classification.diagnosisPattern}. {aiResult.classification.extraArticular && aiResult.classification.extraArticular !== "Yo'q" && aiResult.classification.extraArticular !== "Нет" && aiResult.classification.extraArticular !== "None" ? `${t("ai.extraArticular")} ${aiResult.classification.extraArticular}.` : t("ai.extraArticularNone")}
               </div>
             </>
@@ -335,11 +335,11 @@ export default function App() {
 
       {/* Footer Actions */}
       {aiResult && (
-        <div className="p-4 bg-white border-t border-(--border)] flex justify-end gap-3 shrink-0">
+        <div className="p-4 bg-white border-t border-(--border) flex justify-end gap-3 shrink-0">
           <Button variant="outline" onClick={printReport}>
             <Printer className="w-4 h-4 mr-2" /> {t("actions.print")}
           </Button>
-          <Button onClick={downloadPDF} className="bg-(--accent-blue)] hover:bg-blue-700 text-white">
+          <Button onClick={downloadPDF} className="bg-(--accent-blue) hover:bg-blue-700 text-white">
             <Download className="w-4 h-4 mr-2" /> {t("actions.downloadPdf")}
           </Button>
         </div>
