@@ -29,6 +29,11 @@
     "morningStiffness": "Morning stiffness (min)",
     "morningStiffnessPlaceholder": "e.g., 45",
     "tooltipCycle": "Click: Tender (Red) → Swollen (Blue) → Both (Purple) → None",
+    "bodyPanel": "Major joints",
+    "rightHandPanel": "Right hand",
+    "leftHandPanel": "Left hand",
+    "rightFootPanel": "Right foot",
+    "leftFootPanel": "Left foot",
     "names": {
       "shoulder_l": "Left shoulder",
       "shoulder_r": "Right shoulder",
@@ -57,7 +62,17 @@
       "pip_r_2": "Right PIP 2",
       "pip_r_3": "Right PIP 3",
       "pip_r_4": "Right PIP 4",
-      "pip_r_5": "Right PIP 5"
+      "pip_r_5": "Right PIP 5",
+      "mtp_l_1": "Left MTP 1",
+      "mtp_l_2": "Left MTP 2",
+      "mtp_l_3": "Left MTP 3",
+      "mtp_l_4": "Left MTP 4",
+      "mtp_l_5": "Left MTP 5",
+      "mtp_r_1": "Right MTP 1",
+      "mtp_r_2": "Right MTP 2",
+      "mtp_r_3": "Right MTP 3",
+      "mtp_r_4": "Right MTP 4",
+      "mtp_r_5": "Right MTP 5"
     }
   },
   "labs": {

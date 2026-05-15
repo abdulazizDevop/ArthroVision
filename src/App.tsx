@@ -66,9 +66,13 @@ export default function App() {
     }
   };
 
+  // DAS28 strictly uses 28 joints — exclude foot (mtp_) joints from counts.
+  const tenderJoints28 = tenderJoints.filter((id) => !id.startsWith("mtp_"));
+  const swollenJoints28 = swollenJoints.filter((id) => !id.startsWith("mtp_"));
+
   const das28 = calculateDAS28(
-    tenderJoints.length,
-    swollenJoints.length,
+    tenderJoints28.length,
+    swollenJoints28.length,
     clinical.vas,
     parseFloat(labs.esr.value) || undefined,
     parseFloat(labs.crp.value) || undefined
@@ -85,8 +89,8 @@ export default function App() {
           patientData: patient,
           clinicalData: {
             morningStiffness: clinical.morningStiffness,
-            tjc28: tenderJoints.length,
-            sjc28: swollenJoints.length,
+            tjc28: tenderJoints28.length,
+            sjc28: swollenJoints28.length,
             vas: clinical.vas,
           },
           labData: labs,
@@ -182,9 +186,9 @@ export default function App() {
         <div className="bento-card bento-joint-map">
           <div className="bento-card-title">
             {t("joints.title")}
-            <span>{t("joints.tenderShort")}: {tenderJoints.length} | {t("joints.swollenShort")}: {swollenJoints.length}</span>
+            <span>{t("joints.tenderShort")}: {tenderJoints28.length} | {t("joints.swollenShort")}: {swollenJoints28.length}</span>
           </div>
-          <div className="flex-1 relative flex items-center justify-center bg-[#FDFCFE] rounded-xl overflow-hidden min-h-[200px]">
+          <div className="flex-1 relative bg-[#FDFCFE] rounded-xl overflow-hidden flex flex-col">
              <JointMap tenderJoints={tenderJoints} swollenJoints={swollenJoints} onToggleJoint={handleToggleJoint} />
           </div>
           <div className="flex gap-3 mt-3 text-[11px] justify-center">

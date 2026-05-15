@@ -29,6 +29,11 @@
     "morningStiffness": "Утренняя скованность (мин)",
     "morningStiffnessPlaceholder": "например, 45",
     "tooltipCycle": "Клик: Болезненный (Красный) → Припухший (Синий) → Оба (Фиолетовый) → Нет",
+    "bodyPanel": "Основные суставы",
+    "rightHandPanel": "Правая кисть",
+    "leftHandPanel": "Левая кисть",
+    "rightFootPanel": "Правая стопа",
+    "leftFootPanel": "Левая стопа",
     "names": {
       "shoulder_l": "Левое плечо",
       "shoulder_r": "Правое плечо",
@@ -57,7 +62,17 @@
       "pip_r_2": "Правый PIP 2",
       "pip_r_3": "Правый PIP 3",
       "pip_r_4": "Правый PIP 4",
-      "pip_r_5": "Правый PIP 5"
+      "pip_r_5": "Правый PIP 5",
+      "mtp_l_1": "Левый MTP 1",
+      "mtp_l_2": "Левый MTP 2",
+      "mtp_l_3": "Левый MTP 3",
+      "mtp_l_4": "Левый MTP 4",
+      "mtp_l_5": "Левый MTP 5",
+      "mtp_r_1": "Правый MTP 1",
+      "mtp_r_2": "Правый MTP 2",
+      "mtp_r_3": "Правый MTP 3",
+      "mtp_r_4": "Правый MTP 4",
+      "mtp_r_5": "Правый MTP 5"
     }
   },
   "labs": {

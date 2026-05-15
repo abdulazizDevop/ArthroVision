@@ -68,12 +68,12 @@
   /* Grid placements for md/lg screens */
   @media (min-width: 1024px) {
     .bento-intake { grid-column: 1 / 4; grid-row: 1 / 5; }
-    .bento-joint-map { grid-column: 4 / 9; grid-row: 1 / 6; }
-    .bento-lab-upload { grid-column: 9 / 13; grid-row: 1 / 4; }
-    .bento-imaging { grid-column: 9 / 13; grid-row: 4 / 7; }
+    .bento-joint-map { grid-column: 4 / 10; grid-row: 1 / 6; }
+    .bento-lab-upload { grid-column: 10 / 13; grid-row: 1 / 4; }
+    .bento-imaging { grid-column: 10 / 13; grid-row: 4 / 7; }
     .bento-das28 { grid-column: 1 / 4; grid-row: 5 / 9; }
-    .bento-ai { grid-column: 4 / 9; grid-row: 6 / 9; }
-    .bento-recommendations { grid-column: 9 / 13; grid-row: 7 / 9; }
+    .bento-ai { grid-column: 4 / 10; grid-row: 6 / 9; }
+    .bento-recommendations { grid-column: 10 / 13; grid-row: 7 / 9; }
   }
 
   @media (max-width: 1023px) {

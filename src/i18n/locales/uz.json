@@ -29,6 +29,11 @@
     "morningStiffness": "Ertalabki qotib qolish (daq)",
     "morningStiffnessPlaceholder": "masalan, 45",
     "tooltipCycle": "Bosing: Og'riqli (Qizil) → Shishgan (Ko'k) → Ikkalasi (Binafsha) → Yo'q",
+    "bodyPanel": "Asosiy bo'g'imlar",
+    "rightHandPanel": "O'ng qo'l",
+    "leftHandPanel": "Chap qo'l",
+    "rightFootPanel": "O'ng oyoq",
+    "leftFootPanel": "Chap oyoq",
     "names": {
       "shoulder_l": "Chap yelka",
       "shoulder_r": "O'ng yelka",
@@ -57,7 +62,17 @@
       "pip_r_2": "O'ng PIP 2",
       "pip_r_3": "O'ng PIP 3",
       "pip_r_4": "O'ng PIP 4",
-      "pip_r_5": "O'ng PIP 5"
+      "pip_r_5": "O'ng PIP 5",
+      "mtp_l_1": "Chap MTP 1",
+      "mtp_l_2": "Chap MTP 2",
+      "mtp_l_3": "Chap MTP 3",
+      "mtp_l_4": "Chap MTP 4",
+      "mtp_l_5": "Chap MTP 5",
+      "mtp_r_1": "O'ng MTP 1",
+      "mtp_r_2": "O'ng MTP 2",
+      "mtp_r_3": "O'ng MTP 3",
+      "mtp_r_4": "O'ng MTP 4",
+      "mtp_r_5": "O'ng MTP 5"
     }
   },
   "labs": {
